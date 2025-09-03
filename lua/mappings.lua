@@ -13,3 +13,18 @@ map("n", "<leader>fp", function()
   print(vim.fn.expand('%:p'))
 end)
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+-- map("n", "<leader>fw", function()
+--   require("telescope.builtin").live_grep({
+--     vimgrep_arguments = {
+--       "rg",
+--       "--color=never",
+--       "--no-heading",
+--       "--with-filename",
+--       "--line-number",
+--       "--column",
+--       "--smart-case",
+--       "--hidden",         -- Include hidden files
+--       "--no-ignore-vcs"   -- Don't respect .gitignore
+--     }
+--   })
+-- end, { desc = "Live Grep (hidden files included)" })

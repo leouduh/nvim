@@ -9,7 +9,8 @@ require "nvchad.options"
 vim.wo.relativenumber = true
 vim.o.tabstop = 4
 vim.o.expandtab = true
-
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
 --Max line width ruler
 
 vim.o.colorcolumn="120"
