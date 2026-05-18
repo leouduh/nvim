@@ -17,3 +17,13 @@ vim.o.colorcolumn="120"
 vim.opt.foldlevel = 20
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldmethod = "expr"
+-- vim.lsp.document_color.enable(false)
+
+vim.api.nvim_create_autocmd("FileType", {
+       pattern = "lua",
+       callback = function()
+         vim.bo.shiftwidth = 2
+         vim.bo.tabstop = 2
+         vim.bo.softtabstop = 2
+       end,
+})

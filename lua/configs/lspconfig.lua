@@ -8,12 +8,13 @@ local servers = {
   "html",
   "cssls",
   "gopls",
+  "jsonls",
   "pyright",
   "bashls",
   "clangd",
   "lua_ls",
   "ts_ls",
-  "terraformls"
+  "terraformls",
 }
 local nvlsp = require "nvchad.configs.lspconfig"
 
@@ -28,7 +29,7 @@ end
 
 --configuring single server, example: typescript
 lspconfig.ts_ls.setup {
-  on_attach = nvlsp.on_attach,
+  on_attach = nvlsp.on_attach_disable_color,
   on_init = nvlsp.on_init,
   capabilities = nvlsp.capabilities,
 }
