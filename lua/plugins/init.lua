@@ -18,7 +18,8 @@ return {
   	opts = {
   		ensure_installed = {
   			"vim", "lua", "vimdoc",
-  			"html", "css", "python", "go"
+  			"html", "css", "python", "go",
+  			"bash", "json", "c", "cpp", "typescript", "tsx", "terraform"
   		},
   		auto_install = true,
   	},

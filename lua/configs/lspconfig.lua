@@ -1,7 +1,7 @@
 -- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
 
-local lspconfig = require "lspconfig"
+local nvlsp = require "nvchad.configs.lspconfig"
 
 -- EXAMPLE
 local servers = {
@@ -16,25 +16,16 @@ local servers = {
   "ts_ls",
   "terraformls",
 }
-local nvlsp = require "nvchad.configs.lspconfig"
 
--- lsps with default config
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = nvlsp.on_attach,
-    on_init = nvlsp.on_init,
-    capabilities = nvlsp.capabilities,
-  }
-end
+-- lsps with default config (capabilities/on_init/on_attach already wired up globally by defaults())
+vim.lsp.enable(servers)
 
 --configuring single server, example: typescript
-lspconfig.ts_ls.setup {
+vim.lsp.config("ts_ls", {
   on_attach = nvlsp.on_attach_disable_color,
-  on_init = nvlsp.on_init,
-  capabilities = nvlsp.capabilities,
-}
+})
 
-lspconfig.lua_ls.setup{
+vim.lsp.config("lua_ls", {
   settings = {
     Lua = {
       diagnostics = {
@@ -42,4 +33,4 @@ lspconfig.lua_ls.setup{
       }
     }
   },
-}
+})
