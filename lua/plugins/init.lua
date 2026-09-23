@@ -19,10 +19,18 @@ return {
   		ensure_installed = {
   			"vim", "lua", "vimdoc",
   			"html", "css", "python", "go",
-  			"bash", "json", "c", "cpp", "typescript", "tsx", "terraform"
+  			"bash", "json", "c", "cpp", "typescript", "tsx", "terraform",
+  			"markdown", "markdown_inline"
   		},
   		auto_install = true,
   	},
+  },
+
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    ft = { "markdown" },
+    opts = {},
   },
 
   {

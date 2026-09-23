@@ -19,6 +19,8 @@ vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldmethod = "expr"
 -- vim.lsp.document_color.enable(false)
 
+vim.filetype.add({ extension = { jsonl = "json" } })
+
 vim.api.nvim_create_autocmd("FileType", {
        pattern = "lua",
        callback = function()
